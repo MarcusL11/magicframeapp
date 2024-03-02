@@ -9,6 +9,7 @@ document.getElementById('submit-btn').addEventListener('click', function(e) {
   const csrftoken = document.cookie.split('; ').find(row => row.startsWith('csrftoken=')).split('=')[1];
     
   fetch('https://magicframeapp.onrender.com/upload/', {
+  // fetch('http://127.0.0.1:8000/upload/', {
     method: 'POST',
     body: formData,
     headers: {
@@ -36,6 +37,9 @@ document.getElementById('submit-btn').addEventListener('click', function(e) {
       responseElementCardRulings.innerHTML += 
       `<li>${element['publish_at']}: ${element['comment']}</li>`;
     });
+
+    const reponseElementTcgPrice = document.getElementById('frame_tcg_purcase_link');
+    reponseElementTcgPrice.href = `${data['frame_tcg_purcase_link']}`;    
 
     const reponseElementUsdPrice = document.getElementById('frame_usd_price');
     reponseElementUsdPrice.innerHTML = `${data['frame_usd_price']}`;

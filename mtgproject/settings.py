@@ -17,7 +17,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -142,3 +141,7 @@ STATICFILES_STORAGE = "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+ENCODED_CREDENTIALS = os.environ["GOOGLE_APPLICATION_CREDENTIALS_BASE64"]
+
