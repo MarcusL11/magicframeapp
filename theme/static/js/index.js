@@ -8,7 +8,7 @@ document.getElementById('submit-btn').addEventListener('click', function(e) {
   formData.append('file', imageFile);
   const csrftoken = document.cookie.split('; ').find(row => row.startsWith('csrftoken=')).split('=')[1];
     
-  fetch('http://127.0.0.1:8000/upload/', {
+  fetch('https://magicframeapp.onrender.com/upload/', {
     method: 'POST',
     body: formData,
     headers: {
