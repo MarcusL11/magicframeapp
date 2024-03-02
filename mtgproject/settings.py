@@ -93,7 +93,7 @@ WSGI_APPLICATION = "mtgproject.wsgi.application"
 # }
 
 
-DATABASES = {"default": dj_database_url.parse(os.environ["DATABASE_URL"])}
+DATABASES = {"default": dj_database_url.parse(os.environ["EXTERNAL_DATABASE_URL"])}
 
 
 # Password validation
