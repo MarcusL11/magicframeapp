@@ -1,0 +1,63 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block header %}
+<h1>Image Upload</h1>
+{% endblock header %}
+
+
+{% block body %}
+<div class="flex flex-col justify-center items-center">
+
+    <div class="mt-10 my-4">
+        <h1 class="text-lg font-bold">Magic: The Gathering - A Brillian Lab Frame Application</h1>
+    </div>
+    <div class="card border-4 border-primary p-8 bg-gray-200 my-4">
+
+        <form id="upload-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="my-4 flex justify-center">
+                <input type="file" name="file" id="file-input" class="file-input w-full max-w-xs" />
+            </div>
+
+            <div class="my-4 flex justify-center">
+                <button id="submit-btn" class="btn btn-primary hover:scale-105">Upload Image</button>
+            </div>
+        </form>
+        
+    </div>
+    
+    <div id="loading-animation" class="gap-4 items-center my-10 hidden">
+        <span>AI is processing your image</span>
+        <span class="loading loading-spinner loading-lg "></span>
+    </div>
+    
+    <div id="card_info_block"class="card border-4 border-primary p-8 bg-gray-200 my-4 hidden">
+        
+        <div class="my-4 flex justify-center">
+            <h1 class="text-2xl font-bold" id="frame_card_name"></h1>
+        </div>
+        <h1 class="text-lg font-bold"> Rulings</h1>
+        <div class="my-4 flex justify-center">
+            <div id="frame_card_rulings">
+                <!-- add in the rulings -->
+            </div>
+        </div>
+        <h1 class="text-lg font-bold"> Pricing</h1>
+        <div class="my-4 flex-col justify-center">
+            <p class="my-1">USD: <span id="frame_usd_price"></span></p>
+            <p class="my-1">USD Foil: <span id="frame_usd_foil_price"></span></p>
+            <p class="my-1">USD Etched: <span id="frame_usd_etched_price"></span></p>
+            <p class="my-1">EUR: <span id="frame_eur_price"></span></p>
+            <p class="my-1">EUR Foil: <span id="frame_eur_foil_price"></span></p>            
+        </div>                
+
+        <div class="my-4 flex justify-center">
+            <img id="frame_card_image" src="" />        
+        </div>
+
+
+</div>
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+```

@@ -1,0 +1,24 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html data-theme="autumn" lang="en">
+	<head>
+    <title>Magic: The Gathering - FrameApp</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+	
+	<main>
+		<header class="">
+		</header>
+
+		<body class="">
+			<div class="container">
+				{% block body %}
+				{% endblock body%}
+			</div>
+		</body>
+	</main>
+</html>
